@@ -1,0 +1,62 @@
+﻿@model Introducao.Models.Pessoa
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>ASP MVC</h2>
+
+<p>Curso</p>
+
+<br />
+<br />
+
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Informações de Pessoas</legend>
+
+
+        <div>
+            @Html.LabelFor(x => x.PessoaID)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.PessoaID)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Nome)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Nome)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Tipo)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Tipo)
+        </div>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+
+    </fieldset>
+
+}
+
+
+
+
+@* FORMAS DE TRAZER INFORMAÇÃO COM VIEWDATA
+    <p>@ViewData["PessoaID"]</p>
+    <p>@ViewData["Nome"]</p>
+    <p>@ViewData["Adinistrador"]</p> *@
+
+@*FORMAS DE TRAZER COM VIEWBAG
+
+    <p>@ViewBag.Id</p>
+    <p>@ViewBag.Nome</p>
+    <p>@ViewBag.Tipo</p> *@
+
+@*VIEW TIPADA
+
+    <p>@Model.PessoaID</p>
+    <p>@Model.Nome</p>
+    <p>@Model.Tipo</p> *@
